@@ -57,7 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
               Column(
                 children: [
                   Container(
-                    child: const Text('box1'),
+                    width: 500,
+                    height: 500,
+                    child: const BoxWidget2(),
                   )
                 ],
               ),
@@ -69,6 +71,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ],
+          ),
+          Container(
+            height: 100,
+            decoration: BoxDecoration(
+              color: Colors.grey.shade800,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Row(children: [
+              Text(
+                'visitor',
+                style: TextStyle(color: Colors.white),
+              ),
+              Spacer(),
+              Text(
+                '14,333',
+                style: TextStyle(color: Colors.white),
+              ),
+            ]),
           )
         ],
       ),
@@ -120,26 +140,84 @@ class BoxWidget extends StatelessWidget {
                   margin: const EdgeInsets.all(5),
                   width: 30,
                   height: 100,
-                  decoration: BoxDecoration(color: Colors.blueGrey.shade100, borderRadius: BorderRadius.circular(10)),
+                  decoration: BoxDecoration(
+                      color: Colors.blueGrey.shade100,
+                      borderRadius: BorderRadius.circular(10)),
                 ),
                 Container(
                   margin: const EdgeInsets.all(5),
                   width: 30,
                   height: 100,
-                  decoration: BoxDecoration(color: Colors.blueGrey.shade100, borderRadius: BorderRadius.circular(10)),
+                  decoration: BoxDecoration(
+                      color: Colors.blueGrey.shade100,
+                      borderRadius: BorderRadius.circular(10)),
                 ),
                 Container(
                   margin: const EdgeInsets.all(5),
                   width: 30,
                   height: 300,
-                  decoration: BoxDecoration(color: Colors.blueGrey.shade800, borderRadius: BorderRadius.circular(10)),
+                  decoration: BoxDecoration(
+                      color: Colors.blueGrey.shade800,
+                      borderRadius: BorderRadius.circular(10)),
                 ),
                 Container(
                   margin: const EdgeInsets.all(5),
                   width: 30,
                   height: 350,
-                  decoration: BoxDecoration(color: Colors.blueGrey.shade800, borderRadius: BorderRadius.circular(10)),
+                  decoration: BoxDecoration(
+                      color: Colors.blueGrey.shade800,
+                      borderRadius: BorderRadius.circular(10)),
                 ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class BoxWidget2 extends StatelessWidget {
+  const BoxWidget2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey.shade800,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+            child: Row(
+              children: [
+                Text(
+                  'Contry stats',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w200,
+                      color: Colors.white),
+                ),
+                Spacer(),
+                Icon(Icons.calendar_month, color: Colors.white)
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+            child: Row(
+              children: [
+                Text('미국', style: TextStyle(color: Colors.white)),
+                Spacer(),
+                Text('1,390', style: TextStyle(color: Colors.white)),
+                Row(
+                  children: [
+                    Icon(Icons.arrow_upward, color: Colors.red),
+                    Text('3.3%', style: TextStyle(color: Colors.white)),
+                  ],
+                )
               ],
             ),
           ),
