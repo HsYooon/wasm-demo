@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,62 +33,76 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
+      backgroundColor: Colors.blueGrey.shade800,
       body: Column(
         children: [
           const Row(
-            children: [Text('General Statistics')],
-          ),
-          Row(
             children: [
-              const Column(
+              Text('General Statistics'),
+            ],
+          ),
+          const Row(
+            children: [
+              Column(
                 children: [
                   SizedBox(
                     width: 500,
                     height: 500,
-                    child: BoxWidget(),
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: BoxWidget(),
+                    ),
                   )
                 ],
               ),
               Column(
                 children: [
-                  Container(
+                  SizedBox(
                     width: 500,
                     height: 500,
-                    child: const BoxWidget2(),
-                  )
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: BoxWidget2(),
+                    ),
+                  ),
                 ],
               ),
               Column(
                 children: [
-                  Container(
-                    child: const Text('box1'),
-                  )
+                  SizedBox(
+                    width: 300,
+                    height: 500,
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: BoxWidget3(),
+                    ),
+                  ),
                 ],
               ),
             ],
           ),
           Container(
-            height: 100,
-            decoration: BoxDecoration(
-              color: Colors.grey.shade800,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Row(children: [
-              Text(
-                'visitor',
-                style: TextStyle(color: Colors.white),
+              height: 100,
+              decoration: BoxDecoration(
+                color: Colors.blueGrey.shade600,
+                borderRadius: BorderRadius.circular(10),
               ),
-              Spacer(),
-              Text(
-                '14,333',
-                style: TextStyle(color: Colors.white),
-              ),
-            ]),
-          )
+              child: const Padding(
+                padding: EdgeInsets.all(10),
+                child: Row(
+                  children: [
+                    Text(
+                      'visitor',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Spacer(),
+                    Text(
+                      '14,333',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+              ))
         ],
       ),
     );
@@ -184,7 +197,57 @@ class BoxWidget2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey.shade800,
+        color: Colors.blueGrey.shade600,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+            child: Row(
+              children: [
+                Text(
+                  'Contry stats',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w200,
+                      color: Colors.white),
+                ),
+                Spacer(),
+                Icon(Icons.calendar_month, color: Colors.white)
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+            child: Row(
+              children: [
+                Text('미국', style: TextStyle(color: Colors.white)),
+                Spacer(),
+                Text('1,390', style: TextStyle(color: Colors.white)),
+                Row(
+                  children: [
+                    Icon(Icons.arrow_upward, color: Colors.red),
+                    Text('3.3%', style: TextStyle(color: Colors.white)),
+                  ],
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class BoxWidget3 extends StatelessWidget {
+  const BoxWidget3({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.blueGrey.shade600,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
