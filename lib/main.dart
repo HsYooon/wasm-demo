@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wasm_demo/api.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,6 +31,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  @override
+  void initState() {
+    super.initState();
+    Api.request();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
